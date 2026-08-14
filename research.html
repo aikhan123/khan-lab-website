@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="site.css">
+  <title>Research - Khan Lab</title>
+  <style>
+    .research-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin: 0 0 34px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      text-align: center;
+    }
+    .direction-button {
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+    }
+    .direction-button.active { border-color: rgba(108,164,255,0.72); box-shadow: 0 0 0 1px rgba(108,164,255,0.14); }
+    .topics { margin-top: 34px; }
+    .topic-panel { display: none; }
+    .topic-panel.active { display: block; }
+    .subcard { cursor: pointer; }
+    .subcard.active { border-color: var(--blue); }
+    .paper-panel { display: none; margin-top: 26px; }
+    .paper-panel.active { display: block; }
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="Primary navigation">
+    <a class="brand" href="index.html" aria-label="Khan Lab home"><img class="brand-icon" src="site-icon.png" alt="" aria-hidden="true"><span>Khan Lab</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="people.html">People</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="ai-semiconductors-course.html">Course:<br>AI4Semi</a>
+      <a href="news.html">News</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="youtube-presentations.html">YouTube</a>
+      <a href="join.html">Join</a>
+      <a class="menu-button" href="index.html" aria-label="Open menu"><span></span></a>
+    </nav>
+  </header>
+  <main>
+    <h1 class="section-head">Our Research Directions</h1>
+    <p class="research-note"><span>Click a research direction to explore its topics and related publications.</span><a class="button-link" href="publications.html">Full Publication List</a></p>
+    <section class="grid cards-3" aria-label="Research directions">
+      <button class="card direction-button" data-direction="build"><h2>Build</h2><p>Technology pathfinding for memory, logic, and BEOL-compatible platforms.</p></button>
+      <button class="card direction-button" data-direction="understand"><h2>Understand</h2><p>Computing at the physical limits of memory, energy, reliability, and intelligence.</p></button>
+      <button class="card direction-button" data-direction="accelerate"><h2>Accelerate</h2><p>AI, digital twins, and physics-informed models for discovery and design.</p></button>
+    </section>
+    <section class="topics">
+      <div class="topic-panel" id="build">
+        <div class="grid cards-3">
+          <article class="card subcard active" data-paper="build-nand"><h3>3D NAND Flash</h3><p>Materials, devices, and scaling pathways for dense vertical memory technologies.</p></article>
+          <article class="card subcard" data-paper="build-feram"><h3>Ferroelectric RAM and BEOL Compatible Memories</h3><p>Ferroelectric materials, device stacks, and memory concepts for fast nonvolatile operation and back-end integration.</p></article>
+          <article class="card subcard" data-paper="build-logic"><h3>Advanced Logic Transistors</h3><p>Beyond-silicon transistor paths for efficient switching and high-density logic.</p></article>
+        </div>
+      </div>
+      <div class="topic-panel active" id="understand">
+        <div class="grid cards-3">
+          <article class="card subcard active" data-paper="understand-feram"><h3>FeFET Physics and Reliability</h3><p>Trap capture, retention, first-switch effects, ferroelectric oscillators, and reliability limits.</p></article>
+          <article class="card subcard" data-paper="understand-oxide"><h3>Oxide TFTs</h3><p>Defect dynamics, hydrogen resilience, and BEOL thermal stability in oxide semiconductors.</p></article>
+          <article class="card subcard" data-paper="understand-materials"><h3>Materials and Interfaces</h3><p>Polarization, defects, interfaces, and emergent order in ferroelectric and oxide systems.</p></article>
+        </div>
+      </div>
+      <div class="topic-panel" id="accelerate">
+        <div class="paper-panel active" id="accelerate-papers">
+          <h2>Selected Publications</h2>
+          <div class="list-row"><span class="num">01</span><p>P. Venkatesan et al., "VLPred: Accelerated Endurance Prediction Platform Enabled by AI Surrogates," <strong>IEDM</strong>, 2025.</p></div>
+          <div class="list-row"><span class="num">02</span><p>P. Venkatesan et al., "VLPred," <strong>IEDM</strong>, 2026.</p></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="paper-panel active" id="understand-feram">
+        <h2>Selected Publications</h2>
+        <div class="list-row"><span class="num">01</span><p>P. G. Ravikumar et al., "The First Switch Effect in Ferroelectric Field-Effect Transistors," <strong>IEEE Transactions on Electron Devices</strong>, 2025.</p></div>
+        <div class="list-row"><span class="num">02</span><p>Z. Wang et al., "Stand by bias improvement of read after write delay in ferroelectric field effect transistors," <strong>IEDM</strong>, 2021.</p></div>
+        <div class="list-row"><span class="num">03</span><p>Z. Wang et al., "Experimental Demonstration of Ferroelectric Spiking Neurons for Unsupervised Clustering," <strong>IEDM</strong>, 2018.</p></div>
+      </div>
+      <div class="paper-panel" id="understand-oxide">
+        <h2>Selected Publications</h2>
+        <div class="list-row"><span class="num">01</span><p>Y.-H. Kuo et al., "Experiments and Modeling of Defect Dynamics and BTI in Doped In2O3 TFTs," <strong>IEDM</strong>, 2025.</p></div>
+        <div class="list-row"><span class="num">02</span><p>L. Fernandes et al., "Thermal Processing Limits in Oxide-Channel Ferroelectric Field Effect Transistors," <strong>IEEE Electron Device Letters</strong>, 2026.</p></div>
+        <div class="list-row"><span class="num">03</span><p>T. Song et al., oxide-semiconductor transistor work, <strong>Nature Electronics</strong>.</p></div>
+      </div>
+      <div class="paper-panel" id="understand-materials">
+        <h2>Selected Publications</h2>
+        <div class="list-row"><span class="num">01</span><p>N. Afroze et al., "ALD-Derived WO3-x Leads to Nearly Wake-Up-Free Ferroelectric Hf0.5Zr0.5O2 at Elevated Temperatures," <strong>ACS Applied Electronic Materials</strong>, 2026.</p></div>
+        <div class="list-row"><span class="num">02</span><p>S. Lombardo et al., "Atomic-scale imaging of polarization switching in an (anti-) ferroelectric memory material: Zirconia," <strong>VLSI Technology</strong>, 2020.</p></div>
+      </div>
+      <div class="paper-panel" id="build-nand">
+        <h2>Selected Publications</h2>
+        <div class="list-row"><span class="num">01</span><p>L. Fernandes et al., "Enabling Radiation Hardness in Solid-State NAND Storage Utilizing a Laminated Ferroelectric Stack," <strong>Nano Letters</strong>, 2026.</p></div>
+        <div class="list-row"><span class="num">02</span><p>P. Venkatesan et al., "Enhanced memory performance in ferroelectric NAND applications," <strong>IRPS</strong>, 2025.</p></div>
+        <div class="list-row"><span class="num">03</span><p>D. Das et al., "Design Framework for Ferroelectric Gate Stack Engineering of Vertical NAND Structures," <strong>IMW</strong>, 2024.</p></div>
+      </div>
+      <div class="paper-panel" id="build-feram">
+        <h2>Selected Publications</h2>
+        <div class="list-row"><span class="num">01</span><p>N. Afroze et al., "Engineering Wake-Up-Free Ferroelectric Capacitors with Enhanced High-Temperature Reliability," <strong>IEEE Transactions on Device and Materials Reliability</strong>, 2026.</p></div>
+        <div class="list-row"><span class="num">02</span><p>N. Afroze et al., "Self-Healing Ferroelectric Capacitors with 1000x Endurance Improvement," <strong>IEDM</strong>, 2024.</p></div>
+        <div class="list-row"><span class="num">03</span><p>Z. Wang et al., antiferroelectric memory material work, <strong>Applied Physics Letters</strong>.</p></div>
+      </div>
+      <div class="paper-panel" id="build-logic">
+        <h2>Selected Publications</h2>
+        <div class="list-row"><span class="num">01</span><p>J. Gomez et al., "Hysteresis-free negative capacitance in the multi-domain scenario for logic applications," <strong>IEDM</strong>, 2019.</p></div>
+        <div class="list-row"><span class="num">02</span><p>A. I. Khan, "On the microscopic origin of negative capacitance in ferroelectric materials," <strong>IEDM</strong>, 2018.</p></div>
+        <div class="list-row"><span class="num">03</span><p>T. Song et al., "Hf/Zr Superlattice-Based High-k Gate Dielectrics with Dipole Layer Engineering for Advanced CMOS," <strong>ACS Nano</strong>, 2026.</p></div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const directionButtons = document.querySelectorAll(".direction-button");
+    const topicPanels = document.querySelectorAll(".topic-panel");
+    const subcards = document.querySelectorAll(".subcard");
+    const paperPanels = document.querySelectorAll(".paper-panel");
+    function showPapers(id) {
+      paperPanels.forEach(panel => panel.classList.toggle("active", panel.id === id || (id === "accelerate" && panel.id === "accelerate-papers")));
+      subcards.forEach(card => card.classList.toggle("active", card.dataset.paper === id));
+    }
+    function openDirection(id) {
+      directionButtons.forEach(button => button.classList.toggle("active", button.dataset.direction === id));
+      topicPanels.forEach(panel => panel.classList.toggle("active", panel.id === id));
+      if (id === "build") showPapers("build-nand");
+      if (id === "understand") showPapers("understand-feram");
+      if (id === "accelerate") showPapers("accelerate");
+    }
+    directionButtons.forEach(button => button.addEventListener("click", () => openDirection(button.dataset.direction)));
+    subcards.forEach(card => card.addEventListener("click", () => showPapers(card.dataset.paper)));
+    openDirection("understand");
+  </script>
+</body>
+</html>

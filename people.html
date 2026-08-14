@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="site.css">
+  <title>People - Khan Lab</title>
+  <style>
+    .people-section { margin-top: 44px; }
+    .people-section:first-of-type { margin-top: 0; }
+    .people-section h2 {
+      margin: 0 0 22px;
+      font-size: 1.25rem;
+      font-weight: 680;
+    }
+    .pi-card {
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr);
+      gap: 22px;
+      align-items: center;
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+    .pi-card img {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(108, 164, 255, 0.32);
+    }
+    .pi-card h2 { margin: 0 0 8px; }
+    .pi-card p { margin: 0; color: var(--muted); line-height: 1.55; }
+    .alumni-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .alum {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid rgba(108, 164, 255, 0.18);
+      border-radius: 7px;
+      background: rgba(4, 11, 26, 0.58);
+    }
+    .alum img {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(108, 164, 255, 0.28);
+    }
+    .alum h3 { margin: 0 0 4px; font-size: 0.96rem; }
+    .alum p { margin: 0; color: var(--muted); font-size: 0.78rem; line-height: 1.45; }
+    .alum a, .person a { color: var(--blue); }
+    @media (max-width: 640px) {
+      .pi-card { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="Primary navigation">
+    <a class="brand" href="index.html" aria-label="Khan Lab home"><img class="brand-icon" src="site-icon.png" alt="" aria-hidden="true"><span>Khan Lab</span></a>
+    <nav class="nav" aria-label="Main">
+      <a class="active" href="people.html">People</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="ai-semiconductors-course.html">Course:<br>AI4Semi</a>
+      <a href="news.html">News</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="youtube-presentations.html">YouTube</a>
+      <a href="join.html">Join</a>
+      <a class="menu-button" href="index.html" aria-label="Open menu"><span></span></a>
+    </nav>
+  </header>
+  <main>
+    <h1 class="section-head">People</h1>
+    <section class="people-section">
+      <article class="pi-card">
+        <img src="people/asif-khan.jpg" alt="Asif Khan">
+        <div>
+          <h2>Asif I. Khan</h2>
+          <p>Principal Investigator. Associate Professor, School of Electrical and Computer Engineering, with a courtesy appointment in Materials Science and Engineering, Georgia Institute of Technology.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="people-section">
+      <h2>Graduate Students</h2>
+      <div class="person-grid">
+        <article class="person"><img src="people/prasanna-ravindran.jpg" alt="Prasanna Venkatesan Ravindran"><h3>Prasanna Venkatesan Ravindran</h3><p>Doctoral student, School of Electrical and Computer Engineering. B.Tech. in Electrical Engineering, Indian Institute of Technology Palakkad, 2019. <a href="https://www.linkedin.com/in/prasanna-venkatesan-ravindran" target="_blank" rel="noopener">LinkedIn</a></p></article>
+        <article class="person"><img src="people/priyankka-ravikumar.jpg" alt="Priyankka Gundlapudi Ravikumar"><h3>Priyankka Gundlapudi Ravikumar</h3><p>Doctoral student, School of Electrical and Computer Engineering. B.Tech. in Electrical Engineering, Indian Institute of Technology Palakkad, 2022. <a href="https://www.linkedin.com/in/priyankka-gundlapudi-ravikumar" target="_blank" rel="noopener">LinkedIn</a></p></article>
+        <article class="person"><img src="people/lance-fernandes.jpeg" alt="Lance Fernandes"><h3>Lance Fernandes</h3><p>Doctoral student, School of Electrical and Computer Engineering. M.S. in Electrical and Computer Engineering, Purdue University, 2023. <a href="https://www.linkedin.com/in/lance-v-fernandes" target="_blank" rel="noopener">LinkedIn</a></p></article>
+        <article class="person"><img src="people/yu-hsin-kuo.jpeg" alt="Yu-Hsin Kuo"><h3>Yu-Hsin Kuo</h3><p>Doctoral student, School of Electrical and Computer Engineering. M.S. in Photonics and Optoelectronics, National Taiwan University, 2021. <a href="https://www.linkedin.com/in/yu-hsin-kuo-michael-40a236229" target="_blank" rel="noopener">LinkedIn</a></p></article>
+        <article class="person"><img src="people/salma-soliman.jpg" alt="Salma Soliman"><h3>Salma Soliman</h3><p>Doctoral student, School of Electrical and Computer Engineering. B.S. in Electronics and Communication Engineering, The American University in Cairo, Egypt, 2023. <a href="https://www.linkedin.com/in/salma-soliman-gt" target="_blank" rel="noopener">LinkedIn</a></p></article>
+        <article class="person"><img src="people/taeyoung-song.jpeg" alt="TaeYoung Song"><h3>TaeYoung Song</h3><p>Doctoral student, School of Electrical and Computer Engineering. B.S. in Materials Science and Engineering, Seoul National University, 2015. <a href="https://www.linkedin.com/in/taeyoungsong" target="_blank" rel="noopener">LinkedIn</a></p></article>
+        <article class="person"><img src="people/jiayi-chen.jpg" alt="Jiayi Chen"><h3>Jiayi Chen</h3><p>Doctoral student, School of Electrical and Computer Engineering. B.S. in Physics, University of California, Santa Barbara, 2022. <a href="https://www.linkedin.com/in/jiayi-chen-241404243/" target="_blank" rel="noopener">LinkedIn</a></p></article>
+        <article class="person"><img src="people/congrui-li.jpeg" alt="Congrui Li"><h3>Congrui Li</h3><p>Doctoral student, School of Electrical and Computer Engineering. M.S. in Electrical and Computer Engineering, Georgia Institute of Technology, 2025. <a href="https://www.linkedin.com/in/congrui-li-0a77a2281" target="_blank" rel="noopener">LinkedIn</a></p></article>
+        <article class="person"><img src="people/ranie-jeyakumar.jpg" alt="Ranie Seetha Lakshmi Jeyakumar"><h3>Ranie Seetha Lakshmi Jeyakumar</h3><p>Doctoral student, School of Electrical and Computer Engineering. M.Tech. in Electrical Engineering, Indian Institute of Technology Bombay, 2025. <a href="https://www.linkedin.com/in/ranie-jeyakumar-24985020b" target="_blank" rel="noopener">LinkedIn</a></p></article>
+        <article class="person"><img src="people/sanghyun-kang.png" alt="Sanghyun Kang"><h3>Sanghyun Kang</h3><p>Graduate student, School of Electrical and Computer Engineering. M.S. in Electronic Electrical Engineering, Sungkyunkwan University, 2026. <a href="https://www.linkedin.com/in/sanghyun-kang-a91a04334/" target="_blank" rel="noopener">LinkedIn</a></p></article>
+      </div>
+    </section>
+
+    <section class="people-section">
+      <h2>Undergraduate Students</h2>
+      <div class="person-grid">
+        <article class="person"><img src="people/hari-jayasankar.png" alt="Hari Jayasankar"><h3>Hari Jayasankar</h3><p>Undergraduate student. <a href="https://www.linkedin.com/in/hari-jayasankar-15b598230/" target="_blank" rel="noopener">LinkedIn</a></p></article>
+      </div>
+    </section>
+
+    <section class="people-section">
+      <h2>Alumni</h2>
+      <div class="alumni-list">
+        <article class="alum"><img src="people/nashrah-afroze.jpg" alt="Dr. Nashrah Afroze"><div><h3>Dr. Nashrah Afroze</h3><p>Ph.D. ECE, 2026. Texas Instruments. B.S. in Electrical and Electronic Engineering, Khulna University of Engineering &amp; Technology, 2017. <a href="https://www.linkedin.com/in/nashrah-afroze-phd-b1897917a/" target="_blank" rel="noopener">LinkedIn</a></p></div></article>
+        <article class="alum"><img src="people/zekai-wang.png" alt="Zekai Wang"><div><h3>Zekai Wang</h3><p>Undergraduate and M.S. student, left 2026. <a href="https://www.linkedin.com/in/zekai-wang-ece/" target="_blank" rel="noopener">LinkedIn</a></p></div></article>
+        <article class="alum"><img src="people/chinsung-park.png" alt="Dr. Chinsung Park"><div><h3>Dr. Chinsung Park</h3><p>Ph.D. ECE, Fall 2024. Senior Process Engineer, SK hynix. Ph.D. thesis: Ferroelectric Field Effect Transistors (FEFETs) With Gate Stack Engineering for Embedded and Storage Memory Applications. <a href="https://kr.linkedin.com/in/chinsung-park-25170426" target="_blank" rel="noopener">LinkedIn</a></p></div></article>
+        <article class="alum"><img src="people/dipjyoti-das.png" alt="Dipjyoti Das"><div><h3>Dipjyoti Das</h3><p>Postdoctoral researcher at Georgia Tech, 2022-2024.</p></div></article>
+        <article class="alum"><img src="people/nujhat-tasneem.png" alt="Dr. Nujhat Tasneem"><div><h3>Dr. Nujhat Tasneem</h3><p>Ph.D. ECE, Spring 2023. Device Engineer, Intel Corporation. Ph.D. thesis: Ferroelectric Field Effect Transistors for Embedded Memory Applications: An Investigation of Key Challenges and Solutions. <a href="https://www.linkedin.com/in/nujhattasneem" target="_blank" rel="noopener">LinkedIn</a></p></div></article>
+        <article class="alum"><img src="people/sarah-lynch.jpg" alt="Dr. Sarah Lynch"><div><h3>Dr. Sarah Lynch</h3><p>Ph.D. MSE, Summer 2022. Process Engineer, TEL Technology Center. Ph.D. thesis: Advanced Microstructural Characterization of Ferroelectric and Antiferroelectric Fluorite-Structure Binary Oxide Thin Films for Memory Applications. <a href="https://www.linkedin.com/in/sarahflombardo" target="_blank" rel="noopener">LinkedIn</a></p></div></article>
+        <article class="alum"><img src="people/zheng-wang.png" alt="Dr. Zheng Wang"><div><h3>Dr. Zheng Wang</h3><p>Ph.D. ECE, Spring 2022. Device Reliability Engineering, Micron Technology. Ph.D. thesis: Ferroelectric Field-Effect Transistors for Future Non-Volatile Memory: Challenges and Solutions.</p></div></article>
+        <article class="alum"><img src="people/anthony-gaskell.png" alt="Anthony Gaskell"><div><h3>Anthony Gaskell</h3><p>M.S. ECE, Spring 2020. Process Integration Engineer, TSMC.</p></div></article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
