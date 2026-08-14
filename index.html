@@ -16,7 +16,6 @@
       display: grid;
       align-items: center;
       padding-top: 70px;
-      overflow: hidden;
     }
     .hero-inner {
       position: relative;
@@ -84,35 +83,18 @@
     .direction-card h2 { text-align: center; color: var(--blue); font-size: 1.45rem; }
     .direction-card img { width: 100%; height: 150px; object-fit: contain; display: block; }
     .direction-card h3 { margin: 0; font-size: 1.05rem; }
-    @media (max-width: 1180px) {
-      .hero {
-        min-height: auto;
-        padding-top: 118px;
-      }
+    @media (max-width: 980px) {
+      .hero { min-height: auto; padding-top: 20px; }
       .hero-inner {
         min-height: auto;
         grid-template-columns: 1fr;
-        gap: 28px;
-      }
-      .hero-copy {
-        max-width: 780px;
-        padding-top: 0;
-      }
-      .hero h1 {
-        font-size: clamp(3.2rem, 8vw, 5.4rem);
       }
       .hero img {
-        width: min(760px, 100%);
-        height: auto;
-        max-height: 520px;
-        justify-self: center;
+        width: 100%;
+        height: 430px;
       }
       .hero-inner::after { display: none; }
-    }
-    @media (max-width: 980px) {
-      .hero { padding-top: 20px; }
-      .hero img { max-height: none; }
-      .hero-copy { width: 100%; }
+      .hero-copy { width: 100%; padding-top: 20px; }
       .directions { margin-top: 40px; }
     }
   </style>
