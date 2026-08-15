@@ -7,17 +7,16 @@
   <link rel="icon" type="image/png" href="favicon-32.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="site.css">
-  <title>Khan Lab</title>
-  <meta name="description" content="Khan Lab at Georgia Tech engineers matter to its limits for intelligence and compute hardware.">
+  <title>Research - Khan Lab</title>
   <style>
     body { overflow-x: hidden; }
-    .hero {
+    .research-hero {
       min-height: 760px;
       display: grid;
       align-items: center;
       padding-top: 70px;
     }
-    .hero-inner {
+    .research-hero-inner {
       position: relative;
       width: 80vw;
       margin: 0 auto;
@@ -27,10 +26,14 @@
       gap: clamp(22px, 3.6vw, 64px);
       align-items: center;
     }
-    .hero img {
+    .research-hero-copy {
       position: relative;
-      grid-column: 2;
-      grid-row: 1;
+      z-index: 2;
+      max-width: 590px;
+      padding-top: 26px;
+    }
+    .research-hero img {
+      position: relative;
       width: 100%;
       height: min(590px, 48vw);
       object-fit: contain;
@@ -40,7 +43,7 @@
       align-self: start;
       margin-top: 18px;
     }
-    .hero-inner::after {
+    .research-hero-inner::after {
       content: "";
       position: absolute;
       inset: 0 auto 0 40%;
@@ -48,75 +51,131 @@
       background: linear-gradient(90deg, #020611 0%, rgba(2,6,17,0.42) 100%);
       pointer-events: none;
     }
-    .hero-copy {
-      position: relative;
-      z-index: 2;
-      grid-column: 1;
-      grid-row: 1;
-      max-width: 590px;
-      padding-top: 26px;
-    }
-    .hero h1 {
+    .research-hero h1 {
       margin: 0;
       font-size: clamp(2.55rem, 4.25vw, 4.75rem);
       line-height: 0.98;
       font-weight: 680;
       letter-spacing: 0;
     }
-    .hero-lede {
+    .research-hero-lede {
       color: var(--blue);
       font-size: clamp(1.08rem, 1.55vw, 1.42rem);
       line-height: 1.25;
       margin: 0 0 18px;
       font-weight: 520;
     }
-    .hero-body {
+    .research-hero-body {
       color: rgba(247,247,244,0.8);
       font-size: 1rem;
       line-height: 1.68;
       margin: 0 0 28px;
     }
-    .directions { margin: -48px auto 92px; width: 80vw; }
-    .directions-label {
-      text-align: center;
-      color: var(--soft);
-      letter-spacing: 0.38em;
-      text-transform: uppercase;
-      font-size: 0.62rem;
-      margin-bottom: 10px;
+    .research-content {
+      padding-top: 36px;
     }
-    .direction-card { min-height: 320px; display: grid; grid-template-rows: auto 1fr auto; gap: 12px; }
-    .direction-card h2 { text-align: center; color: var(--blue); font-size: 1.45rem; }
-    .direction-card img { width: 100%; height: 150px; object-fit: contain; display: block; }
-    .direction-card h3 { margin: 0; font-size: 1.05rem; }
+    .research-heading-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin: 0 0 28px;
+      text-align: center;
+    }
+    .research-heading-row .section-head {
+      margin: 0;
+    }
+    .research-note {
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+    }
+    .direction-button {
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+      display: grid;
+      grid-template-rows: auto 150px auto;
+      gap: 12px;
+    }
+    .direction-button h2 {
+      text-align: center;
+      color: var(--blue);
+      font-size: 1.45rem;
+    }
+    .direction-button img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      display: block;
+    }
+    .direction-button.active { border-color: rgba(108,164,255,0.72); box-shadow: 0 0 0 1px rgba(108,164,255,0.14); }
+    .topics { margin-top: 34px; }
+    .cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .topic-panel { display: none; }
+    .topic-panel.active { display: block; }
+    .subcard { cursor: pointer; }
+    .subcard.active { border-color: var(--blue); }
+    .paper-panel { display: none; margin-top: 26px; }
+    .paper-panel.active { display: block; }
+    .research-video-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 22px 18px;
+      margin-top: 16px;
+    }
+    .research-video-card a:first-child {
+      display: block;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+    .research-video-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .research-video-card h3 {
+      margin: 10px 0 0;
+      color: var(--ink);
+      font-size: 0.82rem;
+      line-height: 1.36;
+      font-weight: 560;
+    }
+    .research-video-card h3 a { color: inherit; }
+    .research-video-card h3 a:hover { color: var(--blue); }
+    @media (max-width: 1100px) {
+      .research-video-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
     @media (max-width: 760px) {
-      .hero { min-height: auto; padding-top: 20px; }
-      .hero-inner {
+      .research-hero { min-height: auto; padding-top: 20px; }
+      .research-hero-inner {
         min-height: auto;
         grid-template-columns: 1fr;
       }
-      .hero img {
-        grid-column: 1;
-        grid-row: 2;
+      .research-hero img {
         width: 100%;
         height: 430px;
+        justify-self: center;
       }
-      .hero-inner::after { display: none; }
-      .hero-copy {
-        grid-column: 1;
-        grid-row: 1;
-        width: 100%;
-        padding-top: 20px;
-      }
-      .directions { margin-top: 40px; }
+      .research-hero-inner::after { display: none; }
+      .research-hero-copy { width: 100%; padding-top: 20px; }
+      .cards-2 { grid-template-columns: 1fr; }
+      .research-video-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-<body id="top">
+<body>
   <header class="site-header" aria-label="Primary navigation">
-    <a class="brand" href="index.html" aria-label="Khan Lab home"><img class="brand-icon" src="site-icon.png" alt="" aria-hidden="true"><span>Khan Lab</span></a>
+    <a class="brand" href="research.html" aria-label="Khan Lab home"><img class="brand-icon" src="site-icon.png" alt="" aria-hidden="true"><span>Khan Lab</span></a>
     <nav class="nav" aria-label="Main">
-      <a href="research.html">Research</a>
+      <a href="research.html" aria-current="page">Research</a>
       <a href="publications.html">Publications</a>
       <a href="people.html">People</a>
       <a href="ai-semiconductors-course.html">Course:<br>AI4Semi</a>
@@ -127,37 +186,201 @@
       <a class="menu-button" href="index.html" aria-label="Open menu"><span></span></a>
     </nav>
   </header>
-  <section class="hero" aria-label="Khan Lab landing page hero">
-    <div class="hero-inner">
-      <img src="khan_lab_hero_clean.jpg" alt="Layered glowing material stack on an atomic lattice with blue wave patterns">
-      <div class="hero-copy">
+  <section class="research-hero" aria-label="Khan Lab research hero">
+    <div class="research-hero-inner">
+      <div class="research-hero-copy">
         <h1>The Limits of Matter and Intelligence</h1>
         <div class="rule" aria-hidden="true"></div>
-        <p class="hero-lede">We engineer matter to its fundamental limits to unlock new frontiers in intelligence and compute hardware.</p>
-        <p class="hero-body">Information is physical, and intelligence begins in matter. We engineer emerging materials - ferroelectrics and beyond-silicon semiconductors - where defects, interfaces, polarization, and emergent order redefine the limits of memory, computing, and intelligent hardware.</p>
-        <a class="button-link" href="research.html">Explore Research</a>
+        <p class="research-hero-lede">We engineer matter to its fundamental limits to unlock new frontiers in intelligence and compute hardware.</p>
+        <p class="research-hero-body">Information is physical, and intelligence begins in matter. We engineer emerging materials - ferroelectrics and beyond-silicon semiconductors - where defects, interfaces, polarization, and emergent order redefine the limits of memory, computing, and intelligent hardware.</p>
+        <a class="button-link" href="#research-directions">Explore Research</a>
       </div>
+      <img src="khan_lab_hero_clean.jpg" alt="Layered glowing material stack on an atomic lattice with blue wave patterns">
     </div>
   </section>
-  <section class="directions" aria-label="Research directions">
-    <p class="directions-label">Our Research Directions</p>
-    <div class="grid cards-3">
-      <a class="card direction-card" href="research.html">
-        <h2>Build</h2>
-        <img src="build.png" alt="3D NAND memory structure">
-        <div><h3>Technology Pathfinding</h3><p>Future memory and logic platforms such as 3D NAND, CFET logic, 3D DRAM, and BEOL integration.</p></div>
-      </a>
-      <a class="card direction-card" href="research.html">
-        <h2>Understand</h2>
-        <img src="understand.png" alt="Conceptual material physics visualization">
-        <div><h3>Computing at the Limit</h3><p>Physical boundaries of memory, energy, reliability, scaling, and intelligence.</p></div>
-      </a>
-      <a class="card direction-card" href="research.html">
-        <h2>Accelerate</h2>
-        <img src="accelerate.png" alt="AI-driven materials discovery visualization">
-        <div><h3>AI-Driven Discovery and Design</h3><p>AI, digital twins, and physics-informed models for faster technology discovery.</p></div>
-      </a>
+  <main class="research-content" id="research-directions">
+    <div class="research-heading-row">
+      <h1 class="section-head">Our Research Directions</h1>
+      <p class="research-note">Click a research direction to explore more.</p>
     </div>
-  </section>
+    <section class="grid cards-3" aria-label="Research directions">
+      <button class="card direction-button" data-direction="build"><h2>Build</h2><img src="build.png" alt="3D NAND memory structure"><p>Technology pathfinding for memory, logic, and BEOL-compatible platforms.</p></button>
+      <button class="card direction-button" data-direction="understand"><h2>Understand</h2><img src="understand.png" alt="Conceptual material physics visualization"><p>Computing at the physical limits of memory, energy, reliability, and intelligence.</p></button>
+      <button class="card direction-button" data-direction="accelerate"><h2>Accelerate</h2><img src="accelerate.png" alt="AI-driven materials discovery visualization"><p>AI, digital twins, and physics-informed models for discovery and design.</p></button>
+    </section>
+    <section class="topics">
+      <div class="topic-panel" id="build">
+        <div class="grid cards-3">
+          <article class="card subcard active" data-paper="build-nand"><h3>Ferroelectric NAND Storage</h3></article>
+          <article class="card subcard" data-paper="build-feram"><h3>Ferroelectric RAM and BEOL Memory</h3></article>
+          <article class="card subcard" data-paper="build-logic"><h3>Advanced Logic Transistors</h3></article>
+        </div>
+      </div>
+      <div class="topic-panel" id="understand">
+        <div class="grid cards-2">
+          <article class="card subcard active" data-paper="understand-defects"><h3>Defects and Reliability</h3></article>
+          <article class="card subcard" data-paper="understand-microstructure"><h3>Microstructure and Interfaces</h3></article>
+        </div>
+      </div>
+      <div class="topic-panel" id="accelerate">
+        <div class="paper-panel" id="accelerate-papers">
+          <h2>Selected Publications</h2>
+          <div class="list-row"><span class="num">77</span><p>P. Venkatesan, C. Li, A. Padovani, Z. Wang, H. Jayasankar, P. Ravikumar, M. Nabian, K. Tangsali, S. Nidhan, J. Vamaraju, R. Cherukuri, P. Mathur, E. Piccinni, R. Foiera, R. Gaffetanu, K. A. Aabrar, S. Datta, S. Kalidindi, L. Larcher, A. Khan, Y. Wang, &amp; G. Thareja. “VLPred: Accelerated Endurance Prediction Platform Enabled by AI Surrogates.” The 2025 <strong>IEEE International Electron Devices Meeting</strong> (<strong>IEDM</strong> 2025). <a class="paper-link" href="https://doi.org/10.1109/iedm50572.2025.11353672" target="_blank" rel="noopener">https://doi.org/10.1109/iedm50572.2025.11353672</a></p></div>
+          <h2>Youtube</h2>
+          <div class="research-video-grid" aria-label="Accelerate Youtube videos">
+            <article class="research-video-card">
+              <a href="https://www.youtube.com/watch?v=1tN5Xr6HM6Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/1tN5Xr6HM6Y/hqdefault.jpg" alt=""></a>
+              <h3><a href="https://www.youtube.com/watch?v=1tN5Xr6HM6Y" target="_blank" rel="noopener">VLPred: Accelerated Endurance Prediction Platform</a></h3>
+            </article>
+            <article class="research-video-card">
+              <a href="https://www.youtube.com/shorts/9_MzOD11-Yg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9_MzOD11-Yg/hqdefault.jpg" alt=""></a>
+              <h3><a href="https://www.youtube.com/shorts/9_MzOD11-Yg" target="_blank" rel="noopener">VLPred: An AI-accelerated Virtual Lifetime Predictor for Semiconductor Testing</a></h3>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="paper-panel" id="understand-defects">
+        <h2>Selected Publications</h2>
+        <div class="list-row"><span class="num">84</span><p>P. Ravikumar, P. Venkatesan, C. Park, N. Afroze, M. Tian, W. Chern, S. Datta, S. Yu, S. Mahapatra, and A. I. Khan, “The First Switch Effect in Ferroelectric Field-Effect Transistors,”<strong>IEEE Transactions on Device and Materials Reliability</strong>, vol, vol. 25, pp. 365–370, 2025. <a class="paper-link" href="https://doi.org/10.1109/tdmr.2025.3576042" target="_blank" rel="noopener">https://doi.org/10.1109/tdmr.2025.3576042</a></p></div>
+        <div class="list-row"><span class="num">76</span><p>P. Venkatesan, Y. Chen, T. P. O’Neill, H. L. Chan, H. Jayasankar, P. Ravikumar, Z. Wang, S. B. Fields, M. K. Lenox, W. A. Hubbard, A. Padovani, L. Larcher, G. Thareja, S. Yu, J. F. Ihlefeld, W. Kim, D. Ha, B. C. Regan, &amp; A. Khan. “Direct Observation of Nanoscale Polarization Switching in HZO Ferroelectrics Using STEM-EBIC.” The 2025 <strong>IEEE International Electron Devices Meeting</strong> (<strong>IEDM</strong> 2025). <a class="paper-link" href="https://doi.org/10.1109/iedm50572.2025.11353770" target="_blank" rel="noopener">https://doi.org/10.1109/iedm50572.2025.11353770</a></p></div>
+        <div class="list-row"><span class="num">57</span><p>P. G. Ravikumar, A. Padovani, P. V. Ravindran, C. Park, N. Afroze, M. Tian, S. Datta, S. Yu, L. Larcher, G. Thareja, A. Khan, “Understanding correlation between memory window closure, leakage and read delay effects for FeFET reliability improvement: role of IL and FE traps,” in Proceedings of the <strong>IEEE International Reliability Physics Symposium</strong> (<strong>IRPS</strong>), Apr. 2025. <a class="paper-link" href="https://doi.org/10.1109/irps48204.2025.10983054" target="_blank" rel="noopener">https://doi.org/10.1109/irps48204.2025.10983054</a></p></div>
+        <div class="list-row"><span class="num">58</span><p>P. Venkatesan, A. Padovani, L. Fernandes, P. G. Ravikumar, C. Park, H. Tran, Z. Wang, H. Jayasankar, A. Garlapati, T. Song, H. Chen, W. Chern, Z. Wang, K. Kim, J. Woo, S. Lim, K. Kim, W. Kim, D. Ha, S. Yu, S. Datta, L. Larcher, G. Thareja, A. Khan, “Enhanced memory performance in ferroelectric NAND applications: The role of tunnel dielectric position for robust 10-year retention,” in Proceedings of the <strong>IEEE International Reliability Physics Symposium</strong> (<strong>IRPS</strong>), Apr. 2025. (Best student paper award) <a class="paper-link" href="https://doi.org/10.1109/irps48204.2025.10982749" target="_blank" rel="noopener">https://doi.org/10.1109/irps48204.2025.10982749</a></p></div>
+        <div class="list-row"><span class="num">35</span><p>Z. Wang, N. Tasneem, J. Hur, H. Chen, S. Yu, W. Chern, A. I. Khan, “Stand by bias improvement of read after write delay in ferroelectric field effect transistors.” The 67th <strong>IEEE International Electron Devices Meeting</strong> (<strong>IEDM</strong> 2021), pages 19.3.1–19.3.4 (2021). <a class="paper-link" href="https://doi.org/10.1109/iedm19574.2021.9720502" target="_blank" rel="noopener">https://doi.org/10.1109/iedm19574.2021.9720502</a></p></div>
+        <h2>Youtube</h2>
+        <div class="research-video-grid" aria-label="Defects and Reliability Youtube videos">
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=ZHjVxa__xmw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ZHjVxa__xmw/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=ZHjVxa__xmw" target="_blank" rel="noopener">The First Switch Effect in Ferroelectric Transistors</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=9OkoSadLDUQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9OkoSadLDUQ/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=9OkoSadLDUQ" target="_blank" rel="noopener">Understanding correlation between MW, leakage and RWD for FEFET reliability</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=9J_T_DwQjkA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9J_T_DwQjkA/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=9J_T_DwQjkA" target="_blank" rel="noopener">Trap Capture and Emission Dynamics in FeFETs and Impact on Operation &amp; Reliability</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=bV3RUN8d-Ts" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/bV3RUN8d-Ts/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=bV3RUN8d-Ts" target="_blank" rel="noopener">Comprehensive TDDB characterization of ferro capacitors under bipolar stress</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=wYLvvmKorGQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/wYLvvmKorGQ/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=wYLvvmKorGQ" target="_blank" rel="noopener">Enhanced Retention for Ferroelectric NAND: Role of Tunnel Dielectric Position</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=tcrYuMJu5WU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/tcrYuMJu5WU/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=tcrYuMJu5WU" target="_blank" rel="noopener">Endurance Enhancement in Low Operating Voltage Scavenged SOI FEFETs</a></h3>
+          </article>
+        </div>
+      </div>
+      <div class="paper-panel" id="understand-microstructure">
+        <h2>Selected Publications</h2>
+        <div class="list-row"><span class="num">98</span><p>N. Afroze, Y. Chen, T. P. O'Neill, H. L. Chan, S. B. Fields, M. K. Lenox, W. A. Hubbard, P. Venkatesan, P. Ravikumar, S. Soliman, M. Tian, Y.-H. Kuo, S. Kang, B. C. Regan, and A. I. Khan, “Sub-nm2 ferroelectric domains via charged 180 degree walls in ZrO2,” <strong>arXiv</strong>, 2025. <a class="paper-link" href="https://arxiv.org/abs/2507.18920" target="_blank" rel="noopener">https://arxiv.org/abs/2507.18920</a></p></div>
+        <div class="list-row"><span class="num">76</span><p>P. Venkatesan, Y. Chen, T. P. O’Neill, H. L. Chan, H. Jayasankar, P. Ravikumar, Z. Wang, S. B. Fields, M. K. Lenox, W. A. Hubbard, A. Padovani, L. Larcher, G. Thareja, S. Yu, J. F. Ihlefeld, W. Kim, D. Ha, B. C. Regan, &amp; A. Khan. “Direct Observation of Nanoscale Polarization Switching in HZO Ferroelectrics Using STEM-EBIC.” The 2025 <strong>IEEE International Electron Devices Meeting</strong> (<strong>IEDM</strong> 2025). <a class="paper-link" href="https://doi.org/10.1109/iedm50572.2025.11353770" target="_blank" rel="noopener">https://doi.org/10.1109/iedm50572.2025.11353770</a></p></div>
+        <div class="list-row"><span class="num">65</span><p>N. Tasneem, H. Kashyap, K. Chae, C. Park, P. C. Lee, S. F. Lombardo, N Afroze, M. Tian, H. Kumarasubramanian, J. Hur, H. Chen, W. Chern, S. Yu, P. Bandaru, J. Ravichandran, K. Cho, J. Kacher, A. C. Kummel, and A. I. Khan. “Remote Oxygen Scavenging of the Interfacial Oxide Layer in Ferroelectric Hafnium–Zirconium Oxide-Based Metal–Oxide–Semiconductor Structures.”.ACS Applied Materials &amp; Interfaces, vol. 14, no. 38, pp. 43897–43906, 2022. <a class="paper-link" href="https://doi.org/10.1021/acsami.2c11736" target="_blank" rel="noopener">https://doi.org/10.1021/acsami.2c11736</a></p></div>
+        <div class="list-row"><span class="num">54</span><p>N. Tasneem, Y. M. Yousry, M. Tian, M. Dopita, S. E. Reyes-Lillo, J. Kacher, N. Bassiri-Gharb, A. I. Khan. “A Janovec-Kay-Dunn-Like Behavior at Thickness Scaling in Ultra-Thin Antiferroelectric ZrO 2 Films.”<strong>Advanced Electronic Materials</strong>. vol. 7, pp. 2100485–1–2100485–9, 2021. <a class="paper-link" href="https://doi.org/10.1002/aelm.202100485" target="_blank" rel="noopener">https://doi.org/10.1002/aelm.202100485</a></p></div>
+      </div>
+      <div class="paper-panel" id="build-nand">
+        <h2>Selected Publications</h2>
+        <div class="list-row"><span class="num">96</span><p>L. Fernandes, S. Wodzro, P. Venkatesan, P. Ravikumar, M.-Y. Lee, M. Shon, D. Chakraborty, T. Song, S. Kang, S. Soliman, M. Tian, J. Yeager, J. Adler, J. Chen, Z. Wang, D. Wolfe, S. Yu, A. Padovani, S. Datta, B. Ray, and A. I. Khan, &quot;Enabling Radiation Hardness in Solid-State NAND Storage Utilizing a Laminated Ferroelectric Stack, &quot;<strong>Nano Letters</strong>, vol. 26, no. 10, pp. 3390–3397, 2026. <a class="paper-link" href="https://doi.org/10.1021/acs.nanolett.5c05947" target="_blank" rel="noopener">https://doi.org/10.1021/acs.nanolett.5c05947</a></p></div>
+        <div class="list-row"><span class="num">90</span><p>P. Venkatesan, L. Fernandes, S. Kang, P. Ravikumar, T. Song, C. Park, D. Das, K. H. P. Kim, K. Seo, K. Kim, K. Ni, A. Padovani, M. Pakala, L. Larcher, G. Thareja, W. Kim, D. Ha, and A. I. Khan, &quot;Pushing the limits of NAND technology scaling with ferroelectrics, &quot;.MRS Bulletin, vol. 50, pp. 1094–1107, 2025. <a class="paper-link" href="https://doi.org/10.1557/s43577-025-00991-y" target="_blank" rel="noopener">https://doi.org/10.1557/s43577-025-00991-y</a></p></div>
+        <div class="list-row"><span class="num">76</span><p>P. Venkatesan, C. Park, T. Song, L. Fernandes, D. Das, N. Afroze, P. Ravikumar, M. Tian, H. Chen, W. Chern, K. Kim, J. Woo, S. Lim, K. Kim, W. Kim, D. Ha, S. Mahapatra, S. Yu, S. Datta, &amp; A. Khan. “Disturb and its mitigation in Ferroelectric Field-Effect Transistors with Large Memory Window for NAND Flash Applications.”<strong>IEEE Electron Device Letters</strong>, vol. 45, no. 12, pp. 2367–2370, 2024. (Editor’s Pick). <a class="paper-link" href="https://doi.org/10.1109/led.2024.3467210" target="_blank" rel="noopener">https://doi.org/10.1109/led.2024.3467210</a></p></div>
+        <div class="list-row"><span class="num">74</span><p>L. Fernandes, P. V. Ravindran, T. Song, D. Das, C. Park, N. Afroze, M. Tian, H. Chen, W. Chern, K. Kim, J. Woo, S. Lim, K. Kim, W. Kim, D. Ha, S. Yu, S. Datta, &amp; A. Khan. “Material Choices for Tunnel Dielectric Layer and Gate Blocking Layer for Ferroelectric NAND Applications.”<strong>IEEE Electron Device Letters</strong>, vol. 45, no. 10, pp. 1776–1779, 2024. <a class="paper-link" href="https://doi.org/10.1109/led.2024.3437239" target="_blank" rel="noopener">https://doi.org/10.1109/led.2024.3437239</a></p></div>
+        <div class="list-row"><span class="num">46</span><p>D. Das, H. Park, Z. Wang, C. Zhang, P. Venkatesan Ravindran, C. Park, N. Afroze, P.-K. Hsu, M. Tian, H. Chen, W. Chern, S. Lim, K. Kim, K. Kim, W. Kim, D. Ha, S. Yu, S. Datta, &amp; A. Khan, “Trap Experimental demonstration and modeling of a ferroelectric gate stack with a tunnel dielectric insert for NAND applications.” The 2023 <strong>IEEE International Electron Devices Meeting</strong> (<strong>IEDM</strong> 2023), pages 12.4.1–12.4.4 (2023). <a class="paper-link" href="https://doi.org/10.1109/iedm45741.2023.10413697" target="_blank" rel="noopener">https://doi.org/10.1109/iedm45741.2023.10413697</a></p></div>
+        <h2>Related Youtube Videos</h2>
+        <div class="research-video-grid" aria-label="Ferroelectric NAND Storage Youtube videos">
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=l-hQkF9ElHk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/l-hQkF9ElHk/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=l-hQkF9ElHk" target="_blank" rel="noopener">Ferroelectric NAND Flash for Radiation-Tolerant Space Storage - Asif Khan</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=0MFzFgxuiOU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/0MFzFgxuiOU/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=0MFzFgxuiOU" target="_blank" rel="noopener">Can Ferroelectric Memory Fix Flash Storage for AI? | Asif Khan, Georgia Tech</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=81iAXIWcdMU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/81iAXIWcdMU/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=81iAXIWcdMU" target="_blank" rel="noopener">Channel-Side Interlayer Engineering in Laminated Fe-FETs</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=hp0NKB1IAGw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/hp0NKB1IAGw/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=hp0NKB1IAGw" target="_blank" rel="noopener">Pushing the limits of 3D NAND scaling using ferroelectrics</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=dbelR3Ufjo0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/dbelR3Ufjo0/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=dbelR3Ufjo0" target="_blank" rel="noopener">Comparative Study of Channel Materials for Ferroelectric NAND Applications</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=wYLvvmKorGQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/wYLvvmKorGQ/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=wYLvvmKorGQ" target="_blank" rel="noopener">Enhanced Retention for Ferroelectric NAND: Role of Tunnel Dielectric Position</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=ceL2XELDG4k" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ceL2XELDG4k/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=ceL2XELDG4k" target="_blank" rel="noopener">Ferroelectrics for Storage Applications</a></h3>
+          </article>
+        </div>
+      </div>
+      <div class="paper-panel" id="build-feram">
+        <h2>Selected Publications</h2>
+        <div class="list-row"><span class="num">44</span><p>A. I. Khan, A. Keshavarzi, and S. Datta. “The future of ferroelectric field-effect transistor technology.”<strong>Nature Electronics</strong>, vol. 3, pp. 588–597, 2020. —Industry-focused, review article laying the promises and challenges of ferroelectric materials in advanced microelectronics for Big Data and data-centring computing applications. —Editorial at <strong>Nature Electronics</strong>: “Time to switch to ferroelectronics?”. <a class="paper-link" href="https://doi.org/10.1038/s41928-020-00492-7" target="_blank" rel="noopener">https://doi.org/10.1038/s41928-020-00492-7</a></p></div>
+        <div class="list-row"><span class="num">55</span><p>N. Afroze, A. Padovani, J. Choi, P. G. Ravikumar, Y. H. Kuo, C. Zhang, T. Song, M. Tian, E. Sarkar, M. Noor, P. V. Ravindran, K. A. Aabrar, B. Yildiz, S. Mahapatra, A. Kummel, K. Cho, S. Yu, S. Datta, J. H. Lee, L. Larcher, G. Thareja, &amp; A. Khan. “Self-Healing Ferroelectric Capacitors with 1000x Endurance Improvement at High Temperatures(85–125◦C).”The 2024IEEEInternational Electron Devices Meeting (<strong>IEDM</strong> 2024), pages 4.3.1–4.3.4 (2024). <a class="paper-link" href="https://doi.org/10.1109/iedm50854.2024.10873595" target="_blank" rel="noopener">https://doi.org/10.1109/iedm50854.2024.10873595</a></p></div>
+        <div class="list-row"><span class="num">66</span><p>D. Das, P. V. Ravindran, C. Park, N. Tasneem, Z. Wang, H. Chen, W. Chern, S. Yu, S. Datta, and A. I. Khan, A. “A Ge-Channel Ferroelectric Field Effect Transistor with Logic-Compatible Write Voltage.”<strong>IEEE Electron Device Letters</strong>, vol. 44, no. 2, pp. 257–260, 2023. <a class="paper-link" href="https://doi.org/10.1109/led.2022.3231123" target="_blank" rel="noopener">https://doi.org/10.1109/led.2022.3231123</a></p></div>
+        <div class="list-row"><span class="num">18</span><p>Z. Wang, B. Crafton, J. Gomez, R. Xu, A. Luo, Z. Krivokapic, L. Martin, S. Datta, A. Raychowdhury, A. I. Khan, “Experimental Demonstration of Ferroelectric Spiking Neuronsfor Unsupervised Clustering,” The 64th International Electron Devices Meeting (<strong>IEDM</strong> 2018), 13.3.1–13.3.4 (2018). <a class="paper-link" href="https://doi.org/10.1109/iedm.2018.8614586" target="_blank" rel="noopener">https://doi.org/10.1109/iedm.2018.8614586</a></p></div>
+        <div class="list-row"><span class="num">74</span><p>Y.-H. Kuo, C. Zhang, P. G. Ravikumar, S. Kang, T. Song, M. A. Villena, L. Larcher, H. Kim, M. Hong, P. Yun, G. Thareja, S. Yu, D. Ha, S. Datta, J. E. Medvedeva, &amp; A. I. Khan. “Experiments and Modeling of Defect Dynamics and BTI in Doped In O TFTs Undergoing Densification during 400 ◦C Post-BEOL Forming Gas Annealing (FGA).” The 2025 <strong>IEEE International Electron Devices Meeting</strong> (<strong>IEDM</strong> 2025). <a class="paper-link" href="https://doi.org/10.1109/iedm50572.2025.11353585" target="_blank" rel="noopener">https://doi.org/10.1109/iedm50572.2025.11353585</a></p></div>
+        <h2>Youtube</h2>
+        <div class="research-video-grid" aria-label="Ferroelectric RAM and BEOL Memory Youtube videos">
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=IKhS9UjhMP0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/IKhS9UjhMP0/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=IKhS9UjhMP0" target="_blank" rel="noopener">Ready-to-go FE capacitors for high temperature memory-on-logic applications</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=bGjKBT0C_i4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/bGjKBT0C_i4/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=bGjKBT0C_i4" target="_blank" rel="noopener">Self-healing ferroelectric capacitor for high temperature operation</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=WbC9Ul92ewo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/WbC9Ul92ewo/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=WbC9Ul92ewo" target="_blank" rel="noopener">Self-Healing Ferroelectrics for 3D-Stacked HBM and AI Hardware</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=u4PqGoAFZ-8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/u4PqGoAFZ-8/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=u4PqGoAFZ-8" target="_blank" rel="noopener">Understanding the Process for ALD of BaTiO3 Thin Films</a></h3>
+          </article>
+          <article class="research-video-card">
+            <a href="https://www.youtube.com/watch?v=rkxaoijMZlc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/rkxaoijMZlc/hqdefault.jpg" alt=""></a>
+            <h3><a href="https://www.youtube.com/watch?v=rkxaoijMZlc" target="_blank" rel="noopener">Ferroelectric Field Effect Transistors for Embedded Memory Applications</a></h3>
+          </article>
+        </div>
+      </div>
+      <div class="paper-panel" id="build-logic">
+        <h2>Selected Publications</h2>
+        <div class="list-row"><span class="num">94</span><p>T. Song, S. Kang, Y.-H. Kuo, J. Chen, L. Fernandes, N. Afroze, M. Tian, H. W. Baac, C. Shin, and A. I. Khan, “Hf/Zr Superlattice-Based High-κ Gate Dielectrics with Dipole Layer Engineering for Advanced CMOS,”<strong>ACS Nano</strong>, vol. 20, pp. 2092–2103, 2026. <a class="paper-link" href="https://doi.org/10.1021/acsnano.5c15062" target="_blank" rel="noopener">https://doi.org/10.1021/acsnano.5c15062</a></p></div>
+        <div class="list-row"><span class="num">62</span><p>M. Hoffmann, Z. Wang, N. Tasneem, A. Zubair, P. V. Ravindran, M. Tian, A. Gaskell, D. Triyoso, S. Consiglio, K. Tapily, R. Clark, J. Hur, S. Pentapati, S. K. Lim, M. Dopita, S. Yu, W. Chern, J. Kacher, S. E. Reyes-Lillo9, D. Antoniadis, J. Ravichandran, S. Slesazeck, T. Mikolajick, and A. I. Khan. “Antifer- roelectric negative capacitance from a structural phase transition in zirconia.”<strong>Nature Communications</strong>, vol. 13, pp. 1–8, 2022. —Reported the discovery of negative capacitance in an antiferroelectric material. <a class="paper-link" href="https://doi.org/10.1038/s41467-022-28860-1" target="_blank" rel="noopener">https://doi.org/10.1038/s41467-022-28860-1</a></p></div>
+        <div class="list-row"><span class="num">45</span><p>N. Tasneem, P. V. Ravindran, Z. Wang, J. Gomez, J. Hur, S. Yu, S. Datta, and A. I. Khan. “Differential charge boost in hysteretic ferroelectric–dielectric heterostructure capacitors at steady state.”<strong>Applied Physics Letters</strong>. 118 (12), 122901–1–122901–5 (2021). <a class="paper-link" href="https://doi.org/10.1063/5.0035880" target="_blank" rel="noopener">https://doi.org/10.1063/5.0035880</a></p></div>
+        <div class="list-row"><span class="num">69</span><p>P. V. Ravindran, P. G. Ravikumar, &amp; A. Khan. “Conditions for Domain-Free Negative Capacitance.”<strong><strong>IEEE Transactions on Electron Devices</strong></strong>, vol. 70, no. 8, pp. 4493–4496, 2023. <a class="paper-link" href="https://doi.org/10.1109/ted.2023.3278617" target="_blank" rel="noopener">https://doi.org/10.1109/ted.2023.3278617</a></p></div>
+        <div class="list-row"><span class="num">32</span><p>M. Hoffmann, P. V. Ravindran, and A. I. Khan. “Why Do Ferroelectrics Exhibit Negative Capaci- tance?”.Materials 3743–1–3743-.8 (2019). (invited review). <a class="paper-link" href="https://doi.org/10.3390/ma12223743" target="_blank" rel="noopener">https://doi.org/10.3390/ma12223743</a></p></div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const directionButtons = document.querySelectorAll(".direction-button");
+    const topicPanels = document.querySelectorAll(".topic-panel");
+    const subcards = document.querySelectorAll(".subcard");
+    const paperPanels = document.querySelectorAll(".paper-panel");
+    function showPapers(id) {
+      paperPanels.forEach(panel => panel.classList.toggle("active", panel.id === id || (id === "accelerate" && panel.id === "accelerate-papers")));
+      subcards.forEach(card => card.classList.toggle("active", card.dataset.paper === id));
+    }
+    function openDirection(id) {
+      directionButtons.forEach(button => button.classList.toggle("active", button.dataset.direction === id));
+      topicPanels.forEach(panel => panel.classList.toggle("active", panel.id === id));
+      if (id === "build") showPapers("build-nand");
+      if (id === "understand") showPapers("understand-defects");
+      if (id === "accelerate") showPapers("accelerate");
+    }
+    directionButtons.forEach(button => button.addEventListener("click", () => openDirection(button.dataset.direction)));
+    subcards.forEach(card => card.addEventListener("click", () => showPapers(card.dataset.paper)));
+  </script>
 </body>
 </html>
