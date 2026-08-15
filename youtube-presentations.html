@@ -14,15 +14,26 @@
     .video-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
     .video-row h2 { margin:0; font-size:.82rem; line-height:1.36; font-weight:560; }
     .video-row h2 a:hover { color:var(--blue); }
+    .video-actions { display:flex; flex-wrap:wrap; gap:12px; margin:0 0 34px; }
+    .video-section { margin-top:44px; }
+    .video-section:first-of-type { margin-top:0; }
+    .video-section h2 { margin:0 0 18px; font-size:1.2rem; font-weight:680; }
+    .shorts-list {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 220px));
+      justify-content: start;
+    }
+    .shorts-list .video-thumb {
+      aspect-ratio: 9 / 16;
+    }
   </style>
 </head>
 <body>
   <header class="site-header" aria-label="Primary navigation">
     <a class="brand" href="index.html" aria-label="Khan Lab home"><img class="brand-icon" src="site-icon.png" alt="" aria-hidden="true"><span>Khan Lab</span></a>
     <nav class="nav" aria-label="Main">
-      <a href="people.html">People</a>
       <a href="research.html">Research</a>
       <a href="publications.html">Publications</a>
+      <a href="people.html">People</a>
       <a href="ai-semiconductors-course.html">Course:<br>AI4Semi</a>
       <a href="news.html">News</a>
       <a href="teaching.html">Teaching</a>
@@ -34,17 +45,43 @@
   <main>
     <h1 class="section-head">YouTube</h1>
     <p class="intro">Videos uploaded by Khan Lab on ferroelectrics, emerging memory, semiconductor reliability, and computing hardware.</p>
-    <p><a class="button-link" href="https://www.youtube.com/@KhanLabatGT" target="_blank" rel="noopener">Khan Lab on YouTube</a></p>
-    <section class="video-list" aria-label="Khan Lab YouTube uploads">
+    <div class="video-actions">
+      <a class="button-link" href="https://www.youtube.com/@KhanLabatGT" target="_blank" rel="noopener">Khan Lab YouTube</a>
+      <a class="button-link" href="#full-talks">Full Talks</a>
+      <a class="button-link" href="#youtube-shorts">YouTube Shorts</a>
+    </div>
+    <section class="video-section" id="full-talks">
+    <h2>Full Talks</h2>
+    <div class="video-list" aria-label="Khan Lab full talks">
       <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=l-hQkF9ElHk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/l-hQkF9ElHk/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=l-hQkF9ElHk" target="_blank" rel="noopener">Ferroelectric NAND Flash for Radiation-Tolerant Space Storage - Asif Khan</a></h2></article>
-      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=0MFzFgxuiOU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/0MFzFgxuiOU/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=0MFzFgxuiOU" target="_blank" rel="noopener">Can Ferroelectric Memory Fix Flash Storage for AI?</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=0MFzFgxuiOU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/0MFzFgxuiOU/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=0MFzFgxuiOU" target="_blank" rel="noopener">Can Ferroelectric Memory Fix Flash Storage for AI? | Asif Khan, Georgia Tech</a></h2></article>
       <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=81iAXIWcdMU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/81iAXIWcdMU/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=81iAXIWcdMU" target="_blank" rel="noopener">Channel-Side Interlayer Engineering in Laminated Fe-FETs</a></h2></article>
-      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=Fkx-8-vo5zY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Fkx-8-vo5zY/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=Fkx-8-vo5zY" target="_blank" rel="noopener">Defect Dynamics and Reliability in W-doped In2O3 TFTs</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=Fkx-8-vo5zY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Fkx-8-vo5zY/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=Fkx-8-vo5zY" target="_blank" rel="noopener">Defect Dynamics &amp; Reliability in W-doped In2O3 TFTs Under 400°C Post-BEOL FGA</a></h2></article>
       <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=1tN5Xr6HM6Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/1tN5Xr6HM6Y/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=1tN5Xr6HM6Y" target="_blank" rel="noopener">VLPred: Accelerated Endurance Prediction Platform</a></h2></article>
-      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=vWU6EQaHu54" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/vWU6EQaHu54/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=vWU6EQaHu54" target="_blank" rel="noopener">Making Indium-Oxide Transistors Hydrogen-Resistant and BEOL-Ready</a></h2></article>
-      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=9_MzOD11-Yg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9_MzOD11-Yg/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=9_MzOD11-Yg" target="_blank" rel="noopener">VLPred: An AI-accelerated Virtual Lifetime Predictor</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=IKhS9UjhMP0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/IKhS9UjhMP0/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=IKhS9UjhMP0" target="_blank" rel="noopener">Ready-to-go FE capacitors for high temperature memory-on-logic applications</a></h2></article>
       <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=hp0NKB1IAGw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/hp0NKB1IAGw/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=hp0NKB1IAGw" target="_blank" rel="noopener">Pushing the limits of 3D NAND scaling using ferroelectrics</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=ceL2XELDG4k" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ceL2XELDG4k/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=ceL2XELDG4k" target="_blank" rel="noopener">Ferroelectrics for Storage Applications</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=u4PqGoAFZ-8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/u4PqGoAFZ-8/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=u4PqGoAFZ-8" target="_blank" rel="noopener">Understanding the Process for ALD of BaTiO3 Thin Films</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=tcrYuMJu5WU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/tcrYuMJu5WU/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=tcrYuMJu5WU" target="_blank" rel="noopener">Endurance Enhancement in Low Operating Voltage Scavenged SOI FEFETs</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=dbelR3Ufjo0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/dbelR3Ufjo0/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=dbelR3Ufjo0" target="_blank" rel="noopener">Comparative Study of Channel Materials for Ferroelectric NAND Applications</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=9J_T_DwQjkA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9J_T_DwQjkA/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=9J_T_DwQjkA" target="_blank" rel="noopener">Trap Capture and Emission Dynamics in FeFETs and Impact on Operation &amp; Reliability</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=bV3RUN8d-Ts" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/bV3RUN8d-Ts/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=bV3RUN8d-Ts" target="_blank" rel="noopener">Comprehensive TDDB characterization of ferro capacitors under bipolar stress</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=rkxaoijMZlc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/rkxaoijMZlc/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=rkxaoijMZlc" target="_blank" rel="noopener">Ferroelectric Field Effect Transistors for Embedded Memory Applications</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=WbC9Ul92ewo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/WbC9Ul92ewo/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=WbC9Ul92ewo" target="_blank" rel="noopener">Self-Healing Ferroelectrics for 3D-Stacked HBM and AI Hardware</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=wYLvvmKorGQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/wYLvvmKorGQ/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=wYLvvmKorGQ" target="_blank" rel="noopener">Enhanced Retention for Ferroelectric NAND: Role of Tunnel Dielectric Position</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=ZHjVxa__xmw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ZHjVxa__xmw/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=ZHjVxa__xmw" target="_blank" rel="noopener">The First Switch Effect in Ferroelectric Transistors [Ravikumar | IIRW 24 Best Student Paper, IRPS]</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=9OkoSadLDUQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9OkoSadLDUQ/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=9OkoSadLDUQ" target="_blank" rel="noopener">Understanding correlation between MW, leakage and RWD for FEFET reliability.</a></h2></article>
       <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=xiy2GGOcxx4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/xiy2GGOcxx4/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=xiy2GGOcxx4" target="_blank" rel="noopener">Ferroelectricity will lead the way for 21st century microelectronics</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/watch?v=bGjKBT0C_i4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/bGjKBT0C_i4/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/watch?v=bGjKBT0C_i4" target="_blank" rel="noopener">Self-healing ferroelectric capacitor for high temperature operation</a></h2></article>
+    </div>
+    </section>
+    <section class="video-section" id="youtube-shorts">
+    <h2>YouTube Shorts</h2>
+    <div class="video-list shorts-list" aria-label="Khan Lab YouTube Shorts">
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/shorts/vWU6EQaHu54" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/vWU6EQaHu54/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/shorts/vWU6EQaHu54" target="_blank" rel="noopener">Making Indium-Oxide Transistors Hydrogen-Resistant and BEOL-Ready: Khan Lab Preview for IEDM 2025</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/shorts/9_MzOD11-Yg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9_MzOD11-Yg/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/shorts/9_MzOD11-Yg" target="_blank" rel="noopener">VLPred: An AI-accelerated Virtual Lifetime Predictor for Semiconductor Testing | IEDM 2025</a></h2></article>
+      <article class="video-row"><a class="video-thumb" href="https://www.youtube.com/shorts/c2LCnT7p2jY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/c2LCnT7p2jY/hqdefault.jpg" alt=""></a><h2><a href="https://www.youtube.com/shorts/c2LCnT7p2jY" target="_blank" rel="noopener">High-Temperature Operation in Si-Channel FEFETs Enabled by Interfacial-Layer Scavenging | IEDM 2025</a></h2></article>
+    </div>
     </section>
   </main>
 </body>

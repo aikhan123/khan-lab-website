@@ -9,6 +9,71 @@
   <link rel="stylesheet" href="site.css">
   <title>Research - Khan Lab</title>
   <style>
+    body { overflow-x: hidden; }
+    .research-hero {
+      min-height: 760px;
+      display: grid;
+      align-items: center;
+      padding-top: 70px;
+    }
+    .research-hero-inner {
+      position: relative;
+      width: 80vw;
+      margin: 0 auto;
+      min-height: 590px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(280px, 1.08fr);
+      gap: clamp(22px, 3.6vw, 64px);
+      align-items: center;
+    }
+    .research-hero-copy {
+      position: relative;
+      z-index: 2;
+      max-width: 590px;
+      padding-top: 26px;
+    }
+    .research-hero img {
+      position: relative;
+      width: 100%;
+      height: min(590px, 48vw);
+      object-fit: contain;
+      object-position: center;
+      opacity: 0.96;
+      justify-self: end;
+      align-self: start;
+      margin-top: 18px;
+    }
+    .research-hero-inner::after {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 40%;
+      width: 16%;
+      background: linear-gradient(90deg, #020611 0%, rgba(2,6,17,0.42) 100%);
+      pointer-events: none;
+    }
+    .research-hero h1 {
+      margin: 0;
+      font-size: clamp(2.55rem, 4.25vw, 4.75rem);
+      line-height: 0.98;
+      font-weight: 680;
+      letter-spacing: 0;
+    }
+    .research-hero-lede {
+      color: var(--blue);
+      font-size: clamp(1.08rem, 1.55vw, 1.42rem);
+      line-height: 1.25;
+      margin: 0 0 18px;
+      font-weight: 520;
+    }
+    .research-hero-body {
+      color: rgba(247,247,244,0.8);
+      font-size: 1rem;
+      line-height: 1.68;
+      margin: 0 0 28px;
+    }
+    .research-content {
+      padding-top: 36px;
+    }
     .research-note {
       display: flex;
       align-items: center;
@@ -26,6 +91,20 @@
       cursor: pointer;
       color: inherit;
       font: inherit;
+      display: grid;
+      grid-template-rows: auto 150px auto;
+      gap: 12px;
+    }
+    .direction-button h2 {
+      text-align: center;
+      color: var(--blue);
+      font-size: 1.45rem;
+    }
+    .direction-button img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      display: block;
     }
     .direction-button.active { border-color: rgba(108,164,255,0.72); box-shadow: 0 0 0 1px rgba(108,164,255,0.14); }
     .topics { margin-top: 34px; }
@@ -35,15 +114,29 @@
     .subcard.active { border-color: var(--blue); }
     .paper-panel { display: none; margin-top: 26px; }
     .paper-panel.active { display: block; }
+    @media (max-width: 760px) {
+      .research-hero { min-height: auto; padding-top: 20px; }
+      .research-hero-inner {
+        min-height: auto;
+        grid-template-columns: 1fr;
+      }
+      .research-hero img {
+        width: 100%;
+        height: 430px;
+        justify-self: center;
+      }
+      .research-hero-inner::after { display: none; }
+      .research-hero-copy { width: 100%; padding-top: 20px; }
+    }
   </style>
 </head>
 <body>
   <header class="site-header" aria-label="Primary navigation">
     <a class="brand" href="index.html" aria-label="Khan Lab home"><img class="brand-icon" src="site-icon.png" alt="" aria-hidden="true"><span>Khan Lab</span></a>
     <nav class="nav" aria-label="Main">
-      <a href="people.html">People</a>
       <a href="research.html" aria-current="page">Research</a>
       <a href="publications.html">Publications</a>
+      <a href="people.html">People</a>
       <a href="ai-semiconductors-course.html">Course:<br>AI4Semi</a>
       <a href="news.html">News</a>
       <a href="teaching.html">Teaching</a>
@@ -52,13 +145,25 @@
       <a class="menu-button" href="index.html" aria-label="Open menu"><span></span></a>
     </nav>
   </header>
-  <main>
+  <section class="research-hero" aria-label="Khan Lab research hero">
+    <div class="research-hero-inner">
+      <div class="research-hero-copy">
+        <h1>The Limits of Matter and Intelligence</h1>
+        <div class="rule" aria-hidden="true"></div>
+        <p class="research-hero-lede">We engineer matter to its fundamental limits to unlock new frontiers in intelligence and compute hardware.</p>
+        <p class="research-hero-body">Information is physical, and intelligence begins in matter. We engineer emerging materials - ferroelectrics and beyond-silicon semiconductors - where defects, interfaces, polarization, and emergent order redefine the limits of memory, computing, and intelligent hardware.</p>
+        <a class="button-link" href="#research-directions">Explore Research</a>
+      </div>
+      <img src="khan_lab_hero_clean.jpg" alt="Layered glowing material stack on an atomic lattice with blue wave patterns">
+    </div>
+  </section>
+  <main class="research-content" id="research-directions">
     <h1 class="section-head">Our Research Directions</h1>
     <p class="research-note"><span>Click a research direction to explore its topics and related publications.</span><a class="button-link" href="publications.html">Full Publication List</a></p>
     <section class="grid cards-3" aria-label="Research directions">
-      <button class="card direction-button" data-direction="build"><h2>Build</h2><p>Technology pathfinding for memory, logic, and BEOL-compatible platforms.</p></button>
-      <button class="card direction-button" data-direction="understand"><h2>Understand</h2><p>Computing at the physical limits of memory, energy, reliability, and intelligence.</p></button>
-      <button class="card direction-button" data-direction="accelerate"><h2>Accelerate</h2><p>AI, digital twins, and physics-informed models for discovery and design.</p></button>
+      <button class="card direction-button" data-direction="build"><h2>Build</h2><img src="build.png" alt="3D NAND memory structure"><p>Technology pathfinding for memory, logic, and BEOL-compatible platforms.</p></button>
+      <button class="card direction-button" data-direction="understand"><h2>Understand</h2><img src="understand.png" alt="Conceptual material physics visualization"><p>Computing at the physical limits of memory, energy, reliability, and intelligence.</p></button>
+      <button class="card direction-button" data-direction="accelerate"><h2>Accelerate</h2><img src="accelerate.png" alt="AI-driven materials discovery visualization"><p>AI, digital twins, and physics-informed models for discovery and design.</p></button>
     </section>
     <section class="topics">
       <div class="topic-panel" id="build">
