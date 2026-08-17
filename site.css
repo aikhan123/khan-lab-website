@@ -282,6 +282,29 @@ main {
   white-space: nowrap;
 }
 .course-video-list a:hover { color: var(--blue); }
+.ai4semi-page .page-title {
+  font-size: clamp(1.85rem, 3.5vw, 3.4rem);
+  max-width: 1120px;
+}
+.ai4semi-module {
+  margin-top: 16px;
+  padding-top: 12px;
+}
+.ai4semi-module .course-heading {
+  margin-bottom: 8px;
+}
+.ai4semi-module .course-heading h2 {
+  margin-bottom: 0;
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+.ai4semi-module .course-video-list {
+  gap: 2px 20px;
+}
+.ai4semi-module .course-video-item {
+  padding: 7px 0;
+  border-top: 0;
+}
 @media (max-width: 980px) {
   .site-header {
     position: static;
