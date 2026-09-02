@@ -157,16 +157,42 @@ main {
   line-height: 1.58;
 }
 .card ul { margin: 12px 0 0; padding-left: 18px; }
+.sponsor-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+.sponsor-card {
+  min-height: 102px;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  border: 1px solid rgba(108, 164, 255, 0.18);
+  border-radius: 7px;
+  background:
+    linear-gradient(180deg, rgba(20, 45, 88, 0.46), rgba(2, 6, 17, 0.44)),
+    rgba(5, 13, 30, 0.44);
+}
 .sponsor-card img {
   display: block;
-  width: min(178px, 100%);
-  height: 66px;
+  max-width: 100%;
+  height: 62px;
   object-fit: contain;
-  object-position: left center;
-  margin: 0 0 18px;
+  object-position: center;
 }
-.sponsor-card p {
-  margin: -4px 0 0;
+.sponsor-card .logo-wide {
+  width: min(178px, 100%);
+}
+.sponsor-card .logo-seal {
+  width: 76px;
+}
+.sponsor-card .logo-light { opacity: 0.92; }
+.sponsor-card .logo-on-white {
+  height: 70px;
+  padding: 12px 14px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.96);
 }
 .rule {
   width: 34px;
