@@ -327,6 +327,13 @@ main {
   max-width: 980px;
   margin: 22px 0 28px;
 }
+.ai4semi-overview-image {
+  float: right;
+  width: min(42%, 430px);
+  margin: 0 0 18px 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(105, 166, 255, 0.24);
+}
 .course-overview p {
   margin: 0 0 12px;
   color: var(--muted);
@@ -386,6 +393,12 @@ main {
   padding: 7px 0;
   border-top: 0;
 }
+.course-more-note {
+  margin: 26px 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
 @media (max-width: 980px) {
   .site-header {
     position: static;
@@ -402,4 +415,11 @@ main {
     flex-direction: column;
   }
   .course-video-list { grid-template-columns: 1fr; }
+  .ai4semi-overview-image {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 0 18px;
+  }
 }
