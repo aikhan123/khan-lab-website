@@ -65,6 +65,20 @@
       font-weight: 680;
       letter-spacing: 0;
     }
+    .research-hero h1 span {
+      display: block;
+    }
+    .research-hero h1 .hero-title-primary {
+      color: #f7f7f4;
+      font-size: 1em;
+    }
+    .research-hero h1 .hero-title-secondary {
+      color: var(--blue);
+      font-size: 0.58em;
+      line-height: 1.16;
+      margin-top: 14px;
+      max-width: 620px;
+    }
     .research-hero-lede {
       color: var(--blue);
       font-size: clamp(0.99rem, 1.46vw, 1.33rem);
@@ -196,10 +210,9 @@
   <section class="research-hero" aria-label="Khan Lab research hero">
     <div class="research-hero-inner">
       <div class="research-hero-copy">
-        <h1>Computing at the Limits of Matter</h1>
+        <h1><span class="hero-title-primary">We push matter to its physical limits</span><span class="hero-title-secondary">to redefine what computing hardware can be.</span></h1>
         <div class="rule" aria-hidden="true"></div>
-        <p class="research-hero-lede">We push matter to its physical limits to redefine what computing hardware can be.</p>
-        <p class="research-hero-body">Intelligence has a physical price: every stored bit is a configuration of atoms that must be written, held, and read. Today's hardware pays in charge — moved, leaked, refreshed — and that bill has stopped shrinking. We work in ferroelectrics and beyond-silicon semiconductors, where dipoles hold a state without power and defects and interfaces become the mechanism rather than the thing to suppress. We call this <strong><em>ferroelectronics</em></strong>: electronics built on switchable dipoles rather than charge alone. Landauer showed information carries a thermodynamic cost. How close a real device can get to it is an open question — and it is the one we work on.</p>
+        <p class="research-hero-body">Every bit is a configuration of atoms and features, that must be written, held, and read. Today's hardware relies on electric charge, moving it, leaking it, and refreshing it, while the cost of doing so is no longer falling the way it once did. We work in ferroelectrics and beyond-silicon semiconductors, where dipoles hold a state without power and defects and interfaces become the mechanism rather than the thing to suppress. We call this <strong><em>ferroelectronics</em></strong>: electronics built on switchable dipoles and defects rather than charge alone.</p>
       </div>
       <img src="khan_lab_hero_clean.jpg" alt="Layered glowing material stack on an atomic lattice with blue wave patterns">
     </div>
