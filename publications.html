@@ -322,5 +322,18 @@
       <div class="list-row"><span class="num">01</span><p>Spiking Neural Networks with Excitatory and Inhibitory Connections and Beyond. <span class="deck-meta">2019 - SRC Tutorial</span> <a class="paper-link" href="All%20presentations/Khan_SNN_tutorial_v1_release.pdf" target="_blank" rel="noopener">[pdf]</a></p></div>
     </section>
   </main>
+<script>
+// Local previews use an HTML PDF viewer for embedded browsers without native PDF support.
+if (['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
+  document.querySelectorAll('a[href]').forEach(link => {
+    const url = new URL(link.getAttribute('href'), location.href);
+    if (url.origin === location.origin && url.pathname.toLowerCase().endsWith('.pdf')) {
+      const viewer = new URL('pdf-viewer.html', location.href);
+      viewer.searchParams.set('file', url.pathname + url.search);
+      link.href = viewer.href;
+    }
+  });
+}
+</script>
 </body>
 </html>
