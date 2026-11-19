@@ -15,6 +15,19 @@
 .course-section-tabs a { padding: 10px 18px; border: 1px solid currentColor; border-radius: 6px; text-decoration: none; font-weight: 600; }
 .course-section-tabs a:hover, .course-section-tabs a:focus-visible { background: rgba(105,166,255,.15); }
 .course-anchor { scroll-margin-top: 110px; }
+
+.course-gallery-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.course-gallery-card { display:block; overflow:hidden; border:1px solid var(--line); border-radius:12px; background:var(--panel); transition:transform .2s,border-color .2s; }
+.course-gallery-card:hover { transform:translateY(-4px); border-color:var(--blue); }
+.course-gallery-image { position:relative; aspect-ratio:16/9; overflow:hidden; background:var(--panel-2); }
+.course-gallery-image img { display:block; width:100%; height:100%; object-fit:cover; }
+.course-gallery-play { position:absolute; bottom:12px; right:12px; display:grid; place-items:center; width:46px; height:32px; border-radius:9px; background:#e62117; color:white; font-size:17px; box-shadow:0 2px 12px #0006; }
+.course-gallery-copy { padding:16px 18px 20px; }
+.course-gallery-label { color:var(--blue); font-size:.75rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+.course-gallery-copy h3 { margin:8px 0 0; font-size:1rem; line-height:1.45; }
+@media(max-width:900px) { .course-gallery-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:560px) { .course-gallery-grid { grid-template-columns:1fr; } }
+@media(prefers-reduced-motion:reduce) { .course-gallery-card { transition:none; } .course-gallery-card:hover { transform:none; } }
 </style></head>
 <body><header class="site-header"><a class="brand" href="research.html"><img class="brand-icon" src="site-icon.png" alt=""><span>Khan Lab</span></a><nav class="nav"><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="people.html">People</a><a class="active" href="ai-semiconductors-course.html">Course:<br>AI4Semi</a><a href="news.html">News</a><a href="teaching.html">Teaching</a><a href="youtube-presentations.html">YouTube</a><a href="sponsors.html">Sponsors</a><a href="join.html">Openings</a><a class="menu-button" href="index.html"><span></span></a></nav></header>
 <main class="ai4semi-page"><h1 class="section-head">Course</h1><h2 class="page-title">AI for Semiconductor Manufacturing (ECE 8803 AI4)</h2>
@@ -30,6 +43,7 @@
   <nav class="course-section-tabs" aria-label="Course sections">
     <a href="#core-modules">Core Modules</a>
     <a href="#guest-lectures">Guest Lectures</a>
+    <a href="#lecture-videos">Watch Lectures</a>
   </nav>
   <div id="core-modules" class="course-anchor">
   <section class="course-section ai4semi-module">
@@ -194,6 +208,91 @@
     <div class="course-video-item"><span>Guest Lecture: Agentic AI for Semiconductor Design &amp; Manufacturing — Janhavi Giri</span> <a href="https://www.youtube.com/watch?v=4lkfk-ttChU" target="_blank" rel="noopener">[Recorded Lecture - Youtube]</a></div>
     <div class="course-video-item"><span>Guest Lecture: Device Digital Twins for Technology Development &amp; DTCO — Jeffrey Smith</span> <a href="https://www.youtube.com/watch?v=_P1u8Lq8Di8" target="_blank" rel="noopener">[Recorded Lecture - Youtube]</a></div>
     <div class="course-video-item"><span>Guest Lecture: Virtual Fabrication &amp; Semiconductor Digital Twins — Larry Melvin</span> <a href="https://www.youtube.com/watch?v=q4OTWybMu-k" target="_blank" rel="noopener">[Recorded Lecture - Youtube]</a></div>
+    </div>
+  </section>
+  <section class="course-section course-anchor" id="lecture-videos" aria-labelledby="lecture-videos-heading">
+    <div class="course-heading"><div><h2 id="lecture-videos-heading">Watch the Lectures</h2><p>Explore all course recordings and guest lectures on YouTube.</p></div></div>
+    <div class="course-gallery-grid">
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=JOOhPoMm58I" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/JOOhPoMm58I/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 1</span><h3>Lecture 1: Introductions, Where AI Enters the Fab</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=PPiW83VcNr4" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/PPiW83VcNr4/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 2</span><h3>Lecture 1: Representing a Process Run: PCA and Eigentraces</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=hQ7OwJ4I4lY" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/hQ7OwJ4I4lY/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 2</span><h3>Lecture 2: Multivariate Statistical Process Control</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=SzLr20tO5Xw" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/SzLr20tO5Xw/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 2</span><h3>Supplementary Lecture: Principal Component Analysis</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=RkKBoTDSqMo" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/RkKBoTDSqMo/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 3</span><h3>Lecture 1: Wafer Maps - The Obvious Approach and What It Hides</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=MGIivR9fLi0" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/MGIivR9fLi0/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 3</span><h3>Lecture 2: Wafer Maps - Physics Beats Parameters, Until It Doesn&#x27;t</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=6y_GPVSIaXc" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/6y_GPVSIaXc/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 4</span><h3>Lecture 1: Agentic AI as a Process Engineer</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=bEJIw0AVJGs" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/bEJIw0AVJGs/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 5</span><h3>Lecture 1: Statistical Process Control-1: Variation, Standard Deviation &amp; 3σ</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=7_OmGV7jj-w" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/7_OmGV7jj-w/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 5</span><h3>Lecture 2: Statistical Process Control-2: Control Charts, Signals &amp; Cp/Cpk</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=hFFVMgFW5Z8" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/hFFVMgFW5Z8/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 5</span><h3>Lecture 3: Statistical Process Control-3: Gauge R&amp;R, Run-to-Run Control &amp; ML</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=6NjmH7vF35g" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/6NjmH7vF35g/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 6</span><h3>Lecture 1: Virtual Metrology - 1 : Building the Model</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=7njFQWGkS0o" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/7njFQWGkS0o/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 6</span><h3>Lecture 2: Virtual Metrology - 2 : Deploying the Model</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=KU-o4EsNvy8" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/KU-o4EsNvy8/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 7</span><h3>Lecture 1: Semiconductor Test and the Economics of Rare Defects / Lecture 2: Reliability Qualification: Predicting Ten Years from Weeks</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=_BrftzwYME0" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/_BrftzwYME0/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 8</span><h3>Lecture 1: Bayesian Optimization: The Math, Step by Step</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=l94TW8JXImk" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/l94TW8JXImk/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 8</span><h3>Lecture 2: Bayesian Optimization: Tuning a Bosch Etch Twin</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=wOGombCNyHc" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/wOGombCNyHc/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 9</span><h3>Lecture 1: Introduction to Reinforcement Learning</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=sMMWReaTTvY" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/sMMWReaTTvY/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Module 9</span><h3>Lecture 2: Reinforcement Learning for Plasma Etch</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=4lkfk-ttChU" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/4lkfk-ttChU/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Guest Lectures</span><h3>Guest Lecture: Agentic AI for Semiconductor Design &amp; Manufacturing — Janhavi Giri</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=_P1u8Lq8Di8" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/_P1u8Lq8Di8/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Guest Lectures</span><h3>Guest Lecture: Device Digital Twins for Technology Development &amp; DTCO — Jeffrey Smith</h3></div>
+      </a>
+      <a class="course-gallery-card" href="https://www.youtube.com/watch?v=q4OTWybMu-k" target="_blank" rel="noopener">
+        <div class="course-gallery-image"><img src="https://i.ytimg.com/vi/q4OTWybMu-k/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="course-gallery-play" aria-hidden="true">▶</span></div>
+        <div class="course-gallery-copy"><span class="course-gallery-label">Guest Lectures</span><h3>Guest Lecture: Virtual Fabrication &amp; Semiconductor Digital Twins — Larry Melvin</h3></div>
+      </a>
     </div>
   </section>
 </main></body></html>
